@@ -20,7 +20,8 @@
 #define kStoryboard(StoryboardName)     [UIStoryboard storyboardWithName:StoryboardName bundle:nil]
 
 //通过Storyboard ID 在对应Storyboard中获取场景对象
-#define kVCFromSb(VCID, SbName)     [[UIStoryboard storyboardWithName:SbName bundle:nil] instantiateViewControllerWithIdentifier:VCID]
+#define kVCFromSb(storyboardId, storyboardName)     [[UIStoryboard storyboardWithName:storyboardName bundle:nil] \
+instantiateViewControllerWithIdentifier:storyboardId]
 
 //移除iOS7之后，cell默认左侧的分割线边距
 #define kRemoveCellSeparator \
@@ -28,7 +29,7 @@
 cell.separatorInset = UIEdgeInsetsZero;\
 cell.layoutMargins = UIEdgeInsetsZero; \
 cell.preservesSuperviewLayoutMargins = NO; \
-}\
+}
 
 //Docment文件夹目录
 #define kDocumentPath NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject

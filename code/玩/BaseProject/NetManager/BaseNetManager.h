@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#define kCompletionHandle completionHandle:(void(^)(id model, NSError *error))completionHandle
-
 @interface BaseNetManager : NSObject
+
 
 + (id)GET:(NSString *)path parameters:(NSDictionary *)params completionHandler:(void(^)(id responseObj, NSError *error))complete;
 
@@ -19,4 +18,5 @@
 
 // 把字符串转化为%号格式
 + (NSString *)percentPathWithPath:(NSString *)path params:(NSDictionary *)params;
+
 @end

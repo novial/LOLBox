@@ -8,9 +8,8 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+Category.h"
-#import "BaseNetManager.h"
-#import "TuWanModel.h"
-#import "DuoWanNetManager.h"
+#import "LeftViewController.h"
+#import "TuWanViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,20 +20,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self initializeWithApplication:application];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
     
-    
-    /*
-    [DuoWanNetManager getHeroWithType:HeroTypeAll completionHandle:^(id model, NSError *error) {
-        DDLogVerbose(@"..");
-    }];
-    */
-//    [DuoWanNetManager getHeroVideosWithPage:1 tag:@"Jax" completionHandle:^(id model, NSError *error) {
-//        DDLogVerbose(@"...");
-//    }];
-//    [DuoWanNetManager getHeroSkinsWithHeroName:@"Braum" completionHandle:^(id model, NSError *error) {
-//        DDLogVerbose(@"");
-//    }];
+    RESideMenu *sideMenu = [[RESideMenu alloc] initWithContentViewController:[TuWanViewController new] leftMenuViewController:[LeftViewController new] rightMenuViewController:nil];
+    self.window.rootViewController = sideMenu;
+
     return YES;
 }
+
 
 @end
