@@ -10,6 +10,7 @@
 
 @interface BaseNetManager : NSObject
 
+#define kCompletionHandle completionHandle:(void(^)(id model, NSError *error))completionHandle
 
 + (id)GET:(NSString *)path parameters:(NSDictionary *)params completionHandler:(void(^)(id responseObj, NSError *error))complete;
 

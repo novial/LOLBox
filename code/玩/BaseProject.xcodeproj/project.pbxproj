@@ -502,11 +502,11 @@
 				85E45E651BEB040900ACE4E4 /* BaseNetManager .m */,
 				85E45E661BEB040900ACE4E4 /* DuoWanNetManager.h */,
 				85E45E671BEB040900ACE4E4 /* DuoWanNetManager.m */,
-				85E45E681BEB040900ACE4E4 /* DuoWanRequestPath.h */,
 				85E45E691BEB040900ACE4E4 /* TuWanNetManager.h */,
 				85E45E6A1BEB040900ACE4E4 /* TuWanNetManager.m */,
 				85E45E6B1BEB040900ACE4E4 /* XiMaNetManager.h */,
 				85E45E6C1BEB040900ACE4E4 /* XiMaNetManager.m */,
+				85E45E681BEB040900ACE4E4 /* DuoWanRequestPath.h */,
 			);
 			path = NetManager;
 			sourceTree = "<group>";
@@ -1011,6 +1011,7 @@
 			baseConfigurationReference = 4329DABFE5AD654FE71597C9 /* Pods-BaseProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1037,6 +1038,7 @@
 			baseConfigurationReference = DD4F0750B5DAAA87BA236B31 /* Pods-BaseProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

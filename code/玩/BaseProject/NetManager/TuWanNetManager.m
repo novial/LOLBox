@@ -23,7 +23,7 @@
 @implementation TuWanNetManager
 
 
-+ (id)getTuWanInfoWithType:(InfoType)type start:(NSInteger)start kCompletionHandle
++ (id)getTuWanInfoWithType:(InfoType)type start:(NSInteger)start completionHandle:(void (^)(id, NSError *))completionHandle
 {
 // 把所有接口共有的参数放到switch外面
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{kAppId, kAppVer, @"start":@(start),kClassMore}];

@@ -34,4 +34,5 @@ typedef NS_ENUM(NSUInteger, InfoType){
 
 + (id)getTuWanInfoWithType:(InfoType)type start:(NSInteger)start kCompletionHandle;
 
+
 @end
