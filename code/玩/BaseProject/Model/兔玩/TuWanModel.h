@@ -2,14 +2,13 @@
 //  TuWanModel.h
 //  BaseProject
 //
-//  Created by tarena on 15/11/2.
+//  Created by jiyingxin on 15/11/2.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
 #import "BaseModel.h"
 
-
-@class TuWanDataModel,TuWanDataIndexpicModel,TuWanDataInfochildModel,TuWanDataShowitemModel,TuWanDataInfoModel;
+@class TuWanDataModel,TuWanDataIndexpicModel,TuWanDataIndexpicInfochildModel,TuWanDataIndexpicShowitemModel,TuWanDataIndexpicShowitemInfoModel;
 @interface TuWanModel : BaseModel
 
 @property (nonatomic, copy) NSString *msg;
@@ -19,9 +18,7 @@
 @property (nonatomic, copy) NSString *code;
 
 @end
-
-
-@interface TuWanDataModel : NSObject
+@interface TuWanDataModel : BaseModel
 
 @property (nonatomic, strong) NSArray<TuWanDataIndexpicModel *> *indexpic;
 
@@ -29,9 +26,7 @@
 
 @end
 
-
-
-@interface TuWanDataIndexpicModel : NSObject
+@interface TuWanDataIndexpicModel : BaseModel
 
 @property (nonatomic, copy) NSString *color;
 
@@ -55,7 +50,7 @@
 
 @property (nonatomic, copy) NSString *toutiao;
 
-@property (nonatomic, strong) TuWanDataInfochildModel *infochild;
+@property (nonatomic, strong) TuWanDataIndexpicInfochildModel *infochild;
 
 @property (nonatomic, copy) NSString *litpic;
 
@@ -63,7 +58,7 @@
 
 @property (nonatomic, assign) NSInteger pictotal;
 
-@property (nonatomic, strong) NSArray<TuWanDataShowitemModel *> *showitem;
+@property (nonatomic, strong) NSArray<TuWanDataIndexpicShowitemModel *> *showitem;
 
 @property (nonatomic, copy) NSString *pubdate;
 
@@ -87,9 +82,7 @@
 
 @end
 
-
-
-@interface TuWanDataInfochildModel : NSObject
+@interface TuWanDataIndexpicInfochildModel : BaseModel
 
 @property (nonatomic, copy) NSString *later;
 
@@ -105,22 +98,17 @@
 
 @end
 
-
-
-@interface TuWanDataShowitemModel : NSObject
+@interface TuWanDataIndexpicShowitemModel : BaseModel
 
 @property (nonatomic, copy) NSString *pic;
 
 @property (nonatomic, copy) NSString *text;
 
-@property (nonatomic, strong) TuWanDataInfoModel *info;
+@property (nonatomic, strong) TuWanDataIndexpicShowitemInfoModel *info;
 
 @end
 
-
-
-
-@interface TuWanDataInfoModel : NSObject
+@interface TuWanDataIndexpicShowitemInfoModel : BaseModel
 
 @property (nonatomic, copy) NSString *width;
 

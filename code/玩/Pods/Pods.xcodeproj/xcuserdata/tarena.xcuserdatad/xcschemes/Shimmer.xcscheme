@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "624F88D0CDCD8471C170AD308D6F3379"
+               BlueprintIdentifier = "3672789F56E20457193F3529ADEF1230"
                BuildableName = "libShimmer.a"
                BlueprintName = "Shimmer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "624F88D0CDCD8471C170AD308D6F3379"
+            BlueprintIdentifier = "3672789F56E20457193F3529ADEF1230"
             BuildableName = "libShimmer.a"
             BlueprintName = "Shimmer"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "624F88D0CDCD8471C170AD308D6F3379"
+            BlueprintIdentifier = "3672789F56E20457193F3529ADEF1230"
             BuildableName = "libShimmer.a"
             BlueprintName = "Shimmer"
             ReferencedContainer = "container:Pods.xcodeproj">

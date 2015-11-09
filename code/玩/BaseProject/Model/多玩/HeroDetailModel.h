@@ -2,25 +2,24 @@
 //  HeroDetailModel.h
 //  BaseProject
 //
-//  Created by tarena on 15/11/2.
+//  Created by jiyingxin on 15/11/2.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
-// 英雄资料
 #import "BaseModel.h"
 
-@class HeroSkillModel,HeroInterstModel;
+@class HeroDetailBraumModel,HeroDetailLikeModel,HeroDetailHateModel;
 @interface HeroDetailModel : BaseModel
 
 @property (nonatomic, copy) NSString *ratingAttack;
 
-@property (nonatomic, strong) HeroSkillModel *Hero_W;
+@property (nonatomic, strong) HeroDetailBraumModel *desc_W;
 
 @property (nonatomic, copy) NSString *ID;
 
 @property (nonatomic, copy) NSString *healthLevel;
 
-@property (nonatomic, strong) HeroSkillModel *Hero_Q;
+@property (nonatomic, strong) HeroDetailBraumModel *desc_Q;
 
 @property (nonatomic, copy) NSString *quoteAuthor;
 
@@ -38,9 +37,9 @@
 
 @property (nonatomic, copy) NSString *ratingDifficulty;
 
-@property (nonatomic, strong) NSArray<HeroInterstModel *> *hate;
+@property (nonatomic, strong) NSArray<HeroDetailHateModel *> *hate;
 
-@property (nonatomic, strong) HeroSkillModel *Hero_E;
+@property (nonatomic, strong) HeroDetailBraumModel *desc_E;
 
 @property (nonatomic, copy) NSString *healthRegenBase;
 
@@ -52,7 +51,7 @@
 
 @property (nonatomic, copy) NSString *selectSoundPath;
 
-@property (nonatomic, strong) NSArray<HeroInterstModel *> *like;
+@property (nonatomic, strong) NSArray<HeroDetailLikeModel *> *like;
 
 @property (nonatomic, copy) NSString *name;
 
@@ -84,7 +83,7 @@
 
 @property (nonatomic, copy) NSString *ratingDefense;
 
-@property (nonatomic, strong) HeroSkillModel *Hero_B;
+@property (nonatomic, strong) HeroDetailBraumModel *desc_B;
 
 @property (nonatomic, copy) NSString *tips;
 
@@ -94,7 +93,7 @@
 
 @property (nonatomic, copy) NSString *ratingMagic;
 
-@property (nonatomic, strong) HeroSkillModel *Hero_R;
+@property (nonatomic, strong) HeroDetailBraumModel *desc_R;
 
 @property (nonatomic, copy) NSString *moveSpeed;
 
@@ -105,7 +104,7 @@
 @end
 
 
-@interface HeroSkillModel : NSObject
+@interface HeroDetailBraumModel : BaseModel
 
 @property (nonatomic, copy) NSString *effect;
 
@@ -123,9 +122,7 @@
 
 @end
 
-
-
-@interface HeroInterstModel : NSObject
+@interface HeroDetailLikeModel : BaseModel
 
 @property (nonatomic, copy) NSString *partner;
 
@@ -133,5 +130,11 @@
 
 @end
 
+@interface HeroDetailHateModel : BaseModel
 
+@property (nonatomic, copy) NSString *partner;
+
+@property (nonatomic, copy) NSString *des;
+
+@end
 

@@ -2,7 +2,7 @@
 //  TuWanModel.m
 //  BaseProject
 //
-//  Created by tarena on 15/11/2.
+//  Created by jiyingxin on 15/11/2.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
@@ -11,8 +11,6 @@
 @implementation TuWanModel
 
 @end
-
-
 
 @implementation TuWanDataModel
 
@@ -26,32 +24,24 @@
 @implementation TuWanDataIndexpicModel
 
 + (NSDictionary *)objectClassInArray{
-    return @{@"showitem" : [TuWanDataShowitemModel class]};
-}
-+ (NSDictionary *)replacedKeyFromPropertyName
-{
-    return @{@"typeName":@"typename",
-             @"desc":@"description"};
+    return @{@"showitem" : [TuWanDataIndexpicShowitemModel class]};
 }
 
 @end
 
 
-@implementation TuWanDataInfochildModel
+@implementation TuWanDataIndexpicInfochildModel
 
 @end
 
 
-@implementation TuWanDataShowitemModel
+@implementation TuWanDataIndexpicShowitemModel
 
 @end
 
 
-@implementation TuWanDataInfoModel
+@implementation TuWanDataIndexpicShowitemInfoModel
 
 @end
-
-
-
 
 

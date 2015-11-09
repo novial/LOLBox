@@ -2,32 +2,30 @@
 //  TuWanNetManager.m
 //  BaseProject
 //
-//  Created by tarena on 15/11/3.
+//  Created by jiyingxin on 15/11/3.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
 #import "TuWanNetManager.h"
 
-#define kTuWanPath    @"http://cache.tuwan.com/app/"
-#define kAppId        @"appid":@1
-#define kAppVer       @"appver":@2.1
-#define kClassMore    @"classmore":@"indexpic"
+#define kTuWanPath      @"http://cache.tuwan.com/app/"
+#define kAppId          @"appid": @1
+#define kAppVer         @"appver": @2.1
+#define kClassMore      @"classmore": @"indexpic"
+#define kTuWanDetailPath     @"http://api.tuwan.com/app/"
 
-// 定义成宏，防止哪天服务器人员犯病，突然改动所有dtid键位tuwanID。我们只需要改变宏中的字符串即可
-#define kRemoveClassMore(dic)       [dic removeObjectForKey:@"classmore"];
-#define kSetDtId(string, dic)       [dic setObject:string forKey:@"dtid"];
-#define kSetClass(string, dic)      [dic setObject:string forKey:@"class"];
-#define kSetMod(string, dic)        [dic setObject:string forKey:@"mod"];
-
+//定义成宏，防止哪天服务器人员犯病，突然改动所有dtid键为tuwanID。 我们只需要改变宏中的字符串即可。
+#define kRemoveClassMore(dic)        [dic removeObjectForKey:@"classmore"];
+#define kSetDtId(string, dic)        [dic setObject:string forKey:@"dtid"];
+#define kSetClass(string, dic)       [dic setObject:string forKey:@"class"];
+#define kSetMod(string, dic)         [dic setObject:string forKey:@"mod"];
 
 @implementation TuWanNetManager
 
-
-+ (id)getTuWanInfoWithType:(InfoType)type start:(NSInteger)start completionHandle:(void (^)(id, NSError *))completionHandle
-{
-// 把所有接口共有的参数放到switch外面
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{kAppId, kAppVer, @"start":@(start),kClassMore}];
-    
++ (id)getTuWanInfoWithType:(InfoType)type start:(NSInteger)start kCompletionHandle{
+//把所有接口共有的参数放到switch外面
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{kAppVer, kAppId, @"start": @(start), kClassMore}];
+//安装SCXcodeSwitchExpander插件，可以自动添加所有case
     switch (type) {
         case InfoTypeTouTiao: {
             break;
@@ -64,40 +62,37 @@
             kSetDtId(@"57067", params)
             break;
         }
-        case InfoTypeTuPian:
+        case InfoTypeTuPian://图片,视频,攻略 参数只差type，所以去掉case的break
         case InfoTypeShiPin:
         case InfoTypeGongLue: {
-            kRemoveClassMore(params)
+            if (type == InfoTypeTuPian) [params setObject:@"pic" forKey:@"type"];
+            if (type == InfoTypeShiPin) [params setObject:@"video" forKey:@"type"];
+            if (type == InfoTypeGongLue) [params setObject:@"guide" forKey:@"type"];
             kSetDtId(@"83623,31528,31537,31538,57067,91821", params)
-            if (type == InfoTypeTuPian) {
-                [params setObject:@"pic" forKey:@"type"];
-            }else if (type == InfoTypeShiPin){
-                [params setObject:@"video" forKey:@"type"];
-            }else{
-                [params setObject:@"guide" forKey:@"type"];
-            }
+            kRemoveClassMore(params)
             break;
         }
         case InfoTypeHuanHua: {
             kRemoveClassMore(params)
-            kSetMod(@"幻化", params)
             kSetClass(@"heronews", params)
+            kSetMod(@"幻化", params)
             break;
         }
         case InfoTypeQuWen: {
             kSetMod(@"趣闻", params)
             kSetClass(@"heronews", params)
+            kSetDtId(@"0", params);
             break;
         }
         case InfoTypeCos: {
             kSetClass(@"cos", params)
-            kSetMod(@"cos", params)
             kSetDtId(@"0", params)
+            kSetMod(@"cos", params)
             break;
         }
         case InfoTypeMeiNv: {
-            kSetClass(@"heronews", params)
             kSetMod(@"美女", params)
+            kSetClass(@"heronews", params)
             [params setObject:@"cos1" forKey:@"typechild"];
             break;
         }
@@ -107,16 +102,42 @@
         }
     }
     
-// 兔玩服务器要求，传入参数不能为中文，需要转化为%号形式
+//因为兔玩服务器的要求，传入参数不能为中文，需要转化为%号形式
     NSString *path = [self percentPathWithPath:kTuWanPath params:params];
     
     return [self GET:path parameters:nil completionHandler:^(id responseObj, NSError *error) {
-        completionHandle([TuWanModel objectWithKeyValues:responseObj],error);
+        completionHandle([TuWanModel objectWithKeyValues:responseObj], error);
     }];
-    
 }
 
++ (id)getVideoDetailWithId:(NSString *)aid kCompletionHandle{
+    return [self GET:[self percentPathWithPath:kTuWanDetailPath params:@{kAppId, @"aid": aid}] parameters:nil completionHandler:^(id responseObj, NSError *error) {
+//这里一定要用firstObj方法来取，不能用[0]。 如果数组为空  第一种不会崩溃，值为nil。  第二种会数组越界
+        completionHandle([TuWanVideoModel objectArrayWithKeyValuesArray:responseObj].firstObject, error);
+    }];
+}
 
-
++ (id)getPicDetailWithId:(NSString *)aid kCompletionHandle{
+    return [self GET:[self percentPathWithPath:kTuWanDetailPath params:@{kAppId, @"aid": aid}] parameters:nil completionHandler:^(id responseObj, NSError *error) {
+        //这里一定要用firstObj方法来取，不能用[0]。 如果数组为空  第一种不会崩溃，值为nil。  第二种会数组越界
+        completionHandle([TuWanPicModel objectArrayWithKeyValuesArray:responseObj].firstObject, error);
+    }];
+}
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

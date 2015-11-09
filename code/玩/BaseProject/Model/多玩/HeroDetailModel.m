@@ -2,7 +2,7 @@
 //  HeroDetailModel.m
 //  BaseProject
 //
-//  Created by tarena on 15/11/2.
+//  Created by jiyingxin on 15/11/2.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
@@ -12,34 +12,24 @@
 
 
 + (NSDictionary *)objectClassInArray{
-    return @{@"like" : [HeroInterstModel class], @"hate" : [HeroInterstModel class]};
+    return @{@"like" : [HeroDetailLikeModel class], @"hate" : [HeroDetailHateModel class]};
 }
 
-+ (NSDictionary *)replacedKeyFromPropertyName
-{
-    return @{@"ID":@"id",@"desc":@"description"};
-}
+
+
 @end
 
+@implementation HeroDetailBraumModel
 
-@implementation HeroSkillModel
+@end
 
-+ (NSDictionary *)replacedKeyFromPropertyName
-{
-    return @{@"ID":@"id",@"desc":@"description"};
-}
+@implementation HeroDetailLikeModel
 
 @end
 
 
-
-
-
-@implementation HeroInterstModel
+@implementation HeroDetailHateModel
 
 @end
-
-
-
 
 
