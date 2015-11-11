@@ -48,9 +48,12 @@
     if (!_sideMenu) {
         _sideMenu=[[RESideMenu alloc]initWithContentViewController:[TuWanViewController standardTuWanNavi] leftMenuViewController:[LeftViewController new] rightMenuViewController:nil];
         //为sideMenu设置背景图,图片插件KSImageName，到Github下载
-        _sideMenu.backgroundImage =[UIImage imageNamed:@"10979715_0800"];
+        _sideMenu.backgroundImage =[UIImage imageNamed:@"a4814044"];
         //可以让出现菜单时不显示状态栏
         _sideMenu.menuPrefersStatusBarHidden = YES;
+        
+// 不允许菜单栏缩小到了边缘还可以继续缩小
+        _sideMenu.bouncesHorizontally = NO;
     }
     return _sideMenu;
 }

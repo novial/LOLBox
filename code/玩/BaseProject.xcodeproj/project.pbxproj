@@ -105,6 +105,15 @@
 		8506DF7E1BF02F29004011AB /* TuWanPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8506DF7D1BF02F29004011AB /* TuWanPicViewController.m */; settings = {ASSET_TAGS = (); }; };
 		8506DF811BF049FF004011AB /* XiMaCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8506DF801BF049FF004011AB /* XiMaCategoryCell.m */; settings = {ASSET_TAGS = (); }; };
 		8506DF841BF072E1004011AB /* XiMaCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8506DF831BF072E1004011AB /* XiMaCategoryViewModel.m */; settings = {ASSET_TAGS = (); }; };
+		85DFD69F1BF2CE8E00EB4184 /* HeroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DFD69E1BF2CE8E00EB4184 /* HeroViewController.m */; settings = {ASSET_TAGS = (); }; };
+		85DFD6A21BF2CEB300EB4184 /* BaiKeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DFD6A11BF2CEB300EB4184 /* BaiKeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		85DFD6A51BF2CED900EB4184 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DFD6A41BF2CED900EB4184 /* SearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		85DFD6A81BF2DA0400EB4184 /* SearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DFD6A71BF2DA0400EB4184 /* SearchDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		85DFD6AB1BF2E74D00EB4184 /* ToolMenuViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DFD6AA1BF2E74D00EB4184 /* ToolMenuViewModel.m */; settings = {ASSET_TAGS = (); }; };
+		85DFD6AE1BF3188400EB4184 /* BaiKeGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DFD6AD1BF3188400EB4184 /* BaiKeGroupViewController.m */; settings = {ASSET_TAGS = (); }; };
+		85DFD6B21BF31A5E00EB4184 /* BaiKeGroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DFD6B11BF31A5E00EB4184 /* BaiKeGroupDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		85DFD6B51BF320B200EB4184 /* BestGroupViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DFD6B41BF320B200EB4184 /* BestGroupViewModel.m */; settings = {ASSET_TAGS = (); }; };
+		85DFD6B81BF3755C00EB4184 /* BestGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DFD6B71BF3755C00EB4184 /* BestGroupCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -285,6 +294,24 @@
 		8506DF801BF049FF004011AB /* XiMaCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiMaCategoryCell.m; sourceTree = "<group>"; };
 		8506DF821BF072E1004011AB /* XiMaCategoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XiMaCategoryViewModel.h; path = "BaseProject/ViewController/喜马拉雅/XiMaCategoryViewModel.h"; sourceTree = SOURCE_ROOT; };
 		8506DF831BF072E1004011AB /* XiMaCategoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XiMaCategoryViewModel.m; path = "BaseProject/ViewController/喜马拉雅/XiMaCategoryViewModel.m"; sourceTree = SOURCE_ROOT; };
+		85DFD69D1BF2CE8E00EB4184 /* HeroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroViewController.h; sourceTree = "<group>"; };
+		85DFD69E1BF2CE8E00EB4184 /* HeroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroViewController.m; sourceTree = "<group>"; };
+		85DFD6A01BF2CEB300EB4184 /* BaiKeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaiKeViewController.h; path = ../BaiKeViewController.h; sourceTree = "<group>"; };
+		85DFD6A11BF2CEB300EB4184 /* BaiKeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaiKeViewController.m; path = ../BaiKeViewController.m; sourceTree = "<group>"; };
+		85DFD6A31BF2CED900EB4184 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		85DFD6A41BF2CED900EB4184 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		85DFD6A61BF2DA0400EB4184 /* SearchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDetailViewController.h; sourceTree = "<group>"; };
+		85DFD6A71BF2DA0400EB4184 /* SearchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDetailViewController.m; sourceTree = "<group>"; };
+		85DFD6A91BF2E74D00EB4184 /* ToolMenuViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToolMenuViewModel.h; path = "BaseProject/ViewController/多玩盒子/ToolMenuViewModel.h"; sourceTree = SOURCE_ROOT; };
+		85DFD6AA1BF2E74D00EB4184 /* ToolMenuViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToolMenuViewModel.m; path = "BaseProject/ViewController/多玩盒子/ToolMenuViewModel.m"; sourceTree = SOURCE_ROOT; };
+		85DFD6AC1BF3188400EB4184 /* BaiKeGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaiKeGroupViewController.h; path = ../BaiKeGroupViewController.h; sourceTree = "<group>"; };
+		85DFD6AD1BF3188400EB4184 /* BaiKeGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaiKeGroupViewController.m; path = ../BaiKeGroupViewController.m; sourceTree = "<group>"; };
+		85DFD6B01BF31A5E00EB4184 /* BaiKeGroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiKeGroupDetailViewController.h; sourceTree = "<group>"; };
+		85DFD6B11BF31A5E00EB4184 /* BaiKeGroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiKeGroupDetailViewController.m; sourceTree = "<group>"; };
+		85DFD6B31BF320B200EB4184 /* BestGroupViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BestGroupViewModel.h; path = "BaseProject/ViewController/多玩盒子/百科/BestGroupViewModel.h"; sourceTree = SOURCE_ROOT; };
+		85DFD6B41BF320B200EB4184 /* BestGroupViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BestGroupViewModel.m; path = "BaseProject/ViewController/多玩盒子/百科/BestGroupViewModel.m"; sourceTree = SOURCE_ROOT; };
+		85DFD6B61BF3755C00EB4184 /* BestGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BestGroupCell.h; sourceTree = "<group>"; };
+		85DFD6B71BF3755C00EB4184 /* BestGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BestGroupCell.m; sourceTree = "<group>"; };
 		DD4F0750B5DAAA87BA236B31 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -333,8 +360,15 @@
 		382A8FDB1BEB054F00A1874C /* 多玩盒子 */ = {
 			isa = PBXGroup;
 			children = (
+				85DFD6AF1BF31A3100EB4184 /* 百科 */,
 				382A8FE71BEB066300A1874C /* DuoWanTabBarController.h */,
 				382A8FE81BEB066300A1874C /* DuoWanTabBarController.m */,
+				85DFD69D1BF2CE8E00EB4184 /* HeroViewController.h */,
+				85DFD69E1BF2CE8E00EB4184 /* HeroViewController.m */,
+				85DFD6A31BF2CED900EB4184 /* SearchViewController.h */,
+				85DFD6A41BF2CED900EB4184 /* SearchViewController.m */,
+				85DFD6A61BF2DA0400EB4184 /* SearchDetailViewController.h */,
+				85DFD6A71BF2DA0400EB4184 /* SearchDetailViewController.m */,
 			);
 			path = "多玩盒子";
 			sourceTree = "<group>";
@@ -377,6 +411,10 @@
 		382A8FE31BEB05AD00A1874C /* 多玩盒子 */ = {
 			isa = PBXGroup;
 			children = (
+				85DFD6A91BF2E74D00EB4184 /* ToolMenuViewModel.h */,
+				85DFD6AA1BF2E74D00EB4184 /* ToolMenuViewModel.m */,
+				85DFD6B31BF320B200EB4184 /* BestGroupViewModel.h */,
+				85DFD6B41BF320B200EB4184 /* BestGroupViewModel.m */,
 			);
 			path = "多玩盒子";
 			sourceTree = "<group>";
@@ -670,6 +708,8 @@
 				382020111BEC36F20003DB02 /* TuWanListCell.m */,
 				382020131BEC415C0003DB02 /* TuWanImageCell.h */,
 				382020141BEC415C0003DB02 /* TuWanImageCell.m */,
+				85DFD6B61BF3755C00EB4184 /* BestGroupCell.h */,
+				85DFD6B71BF3755C00EB4184 /* BestGroupCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -767,6 +807,19 @@
 			path = "喜马拉雅";
 			sourceTree = "<group>";
 		};
+		85DFD6AF1BF31A3100EB4184 /* 百科 */ = {
+			isa = PBXGroup;
+			children = (
+				85DFD6A01BF2CEB300EB4184 /* BaiKeViewController.h */,
+				85DFD6A11BF2CEB300EB4184 /* BaiKeViewController.m */,
+				85DFD6AC1BF3188400EB4184 /* BaiKeGroupViewController.h */,
+				85DFD6AD1BF3188400EB4184 /* BaiKeGroupViewController.m */,
+				85DFD6B01BF31A5E00EB4184 /* BaiKeGroupDetailViewController.h */,
+				85DFD6B11BF31A5E00EB4184 /* BaiKeGroupDetailViewController.m */,
+			);
+			path = "百科";
+			sourceTree = "<group>";
+		};
 		DEB62B47C560AA65E07ECFA4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -827,6 +880,7 @@
 				TargetAttributes = {
 					3886C0921BD748830014E661 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 68HY85UEPU;
 					};
 				};
 			};
@@ -944,6 +998,7 @@
 				8506DF841BF072E1004011AB /* XiMaCategoryViewModel.m in Sources */,
 				38CBDDBA1BEB4755008D5ADC /* HeroGiftModel.m in Sources */,
 				3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */,
+				85DFD6B21BF31A5E00EB4184 /* BaiKeGroupDetailViewController.m in Sources */,
 				38CBDDB41BEB4755008D5ADC /* BestGroupModel.m in Sources */,
 				382A8FEF1BEB06EB00A1874C /* MyInfoViewController.m in Sources */,
 				38CBDDBE1BEB4755008D5ADC /* ItemDetailModel.m in Sources */,
@@ -955,20 +1010,27 @@
 				3820200F1BEC36710003DB02 /* TuWanListViewController.m in Sources */,
 				38CBDD851BEB474C008D5ADC /* XiMaNetManager.m in Sources */,
 				3885C8F91BE8E96A009441EA /* PSCollectionView.m in Sources */,
+				85DFD6B51BF320B200EB4184 /* BestGroupViewModel.m in Sources */,
 				38CBDDC31BEB4755008D5ADC /* ZBItemModel.m in Sources */,
 				38CBDDBC1BEB4755008D5ADC /* HeroVideoModel.m in Sources */,
 				38CBDDC01BEB4755008D5ADC /* SumAbilityModel.m in Sources */,
+				85DFD69F1BF2CE8E00EB4184 /* HeroViewController.m in Sources */,
+				85DFD6AB1BF2E74D00EB4184 /* ToolMenuViewModel.m in Sources */,
 				38CBDDBF1BEB4755008D5ADC /* RuneModel.m in Sources */,
 				38CBDDB71BEB4755008D5ADC /* HeroChangeModel.m in Sources */,
 				3886C09B1BD748830014E661 /* AppDelegate.m in Sources */,
 				8506DF7B1BF02A11004011AB /* TuWanPicViewModel.m in Sources */,
 				3885C8981BE8E88D009441EA /* iCarousel.m in Sources */,
 				38CBDDC21BEB4755008D5ADC /* ZBCategoryModel.m in Sources */,
+				85DFD6A51BF2CED900EB4184 /* SearchViewController.m in Sources */,
 				384417171BEF5EE8004D486F /* TuWanVideoModel.m in Sources */,
 				382020121BEC36F20003DB02 /* TuWanListCell.m in Sources */,
+				85DFD6AE1BF3188400EB4184 /* BaiKeGroupViewController.m in Sources */,
+				85DFD6A21BF2CEB300EB4184 /* BaiKeViewController.m in Sources */,
 				8506DF7E1BF02F29004011AB /* TuWanPicViewController.m in Sources */,
 				38CBDD831BEB474C008D5ADC /* DuoWanNetManager.m in Sources */,
 				38CBDD781BEB442A008D5ADC /* Factory.m in Sources */,
+				85DFD6B81BF3755C00EB4184 /* BestGroupCell.m in Sources */,
 				38CBDDBD1BEB4755008D5ADC /* HeroWeekDataModel.m in Sources */,
 				38CBDD841BEB474C008D5ADC /* TuWanNetManager.m in Sources */,
 				38CBDD7B1BEB4719008D5ADC /* TuWanViewModel.m in Sources */,
@@ -990,6 +1052,7 @@
 				3886C0C11BD74B090014E661 /* BaseModel.m in Sources */,
 				382A8FEC1BEB06C700A1874C /* TuWanViewController.m in Sources */,
 				3886C0981BD748830014E661 /* main.m in Sources */,
+				85DFD6A81BF2DA0400EB4184 /* SearchDetailViewController.m in Sources */,
 				3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */,
 				38CBDDBB1BEB4755008D5ADC /* HeroSkinModel.m in Sources */,
 				38CBDDB51BEB4755008D5ADC /* FreeHeroModel.m in Sources */,
@@ -1108,6 +1171,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1115,7 +1179,7 @@
 				);
 				GCC_PREFIX_HEADER = BaseProject/Resource/PrefixHeader.pch;
 				INFOPLIST_FILE = BaseProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1124,7 +1188,7 @@
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.2-2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.2-2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarena.BaseProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.novial.LOLBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1135,6 +1199,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1142,7 +1207,7 @@
 				);
 				GCC_PREFIX_HEADER = BaseProject/Resource/PrefixHeader.pch;
 				INFOPLIST_FILE = BaseProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1151,7 +1216,7 @@
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.2-2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.2-2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarena.BaseProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.novial.LOLBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

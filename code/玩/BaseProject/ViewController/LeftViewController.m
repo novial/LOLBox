@@ -10,6 +10,7 @@
 #import <NSString+Icons.h>
 #import "RankListViewController.h"
 #import "TuWanViewController.h"
+#import "DuoWanTabBarController.h"
 
 @interface LeftViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -19,7 +20,7 @@
 
 - (NSArray *)itemNames
 {
-    return @[@"游戏资讯",@"喜马拉雅",@"英雄联盟",@"个人设置"];
+    return @[@"兔玩资讯",@"喜马拉雅",@"英雄联盟",@"个人设置"];
 }
 
 - (UITableView *)tableView
@@ -37,6 +38,8 @@
             make.centerY.mas_equalTo(0);
             make.left.mas_equalTo(0);
         }];
+// 去掉分割线
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }
@@ -61,7 +64,7 @@
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.accessoryType = 1;
     cell.textLabel.text = self.itemNames[indexPath.row];
-    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor turquoiseColor];
     return cell;
 }
 kRemoveCellSeparator
@@ -77,6 +80,9 @@ kRemoveCellSeparator
             [self.sideMenuViewController setContentViewController:[RankListViewController defaultNavi] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
+        case 2:
+            [self.sideMenuViewController setContentViewController:[DuoWanTabBarController standardInstance] animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
         default:
             break;
     }
