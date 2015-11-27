@@ -65,7 +65,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor greenSeaColor];
-    self.title = @"兔玩资讯";
+    self.title = @"游戏资讯";
     [Factory addMenuItemToVC:self];
 }
 

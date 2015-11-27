@@ -19,7 +19,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self initializeWithApplication:application];
-    
     self.window.rootViewController = self.sideMenu;
     [self configGlobalUIStyle]; //配置全局UI样式
     return YES;
@@ -51,8 +50,7 @@
         _sideMenu.backgroundImage =[UIImage imageNamed:@"a4814044"];
         //可以让出现菜单时不显示状态栏
         _sideMenu.menuPrefersStatusBarHidden = YES;
-        
-// 不允许菜单栏缩小到了边缘还可以继续缩小
+//不允许菜单栏到了边缘还可以继续缩小
         _sideMenu.bouncesHorizontally = NO;
     }
     return _sideMenu;

@@ -156,7 +156,7 @@ forKey:[@"desc" stringByAppendingString:key]];\
 
 + (id)getSumAbilityCompletionHandle:(void (^)(id, NSError *))completionHandle{
     return [self GET:kSumAbilityPath parameters:@{kV, kOSType} completionHandler:^(id responseObj, NSError *error) {
-        completionHandle([SumAbilityModel objectWithKeyValues:responseObj], error);
+        completionHandle([SumAbilityModel objectArrayWithKeyValuesArray:responseObj], error);
     }];
 }
 

@@ -2,7 +2,7 @@
 //  BestGroupCell.h
 //  BaseProject
 //
-//  Created by tarena on 15/11/11.
+//  Created by jiyingxin on 15/11/11.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
@@ -10,12 +10,15 @@
 #import "TRImageView.h"
 
 @interface BestGroupCell : UITableViewCell
-@property (strong, nonatomic) TRImageView *iconView1;
-@property (strong, nonatomic) TRImageView *iconView2;
-@property (strong, nonatomic) TRImageView *iconView3;
-@property (strong, nonatomic) TRImageView *iconView4;
-@property (strong, nonatomic) TRImageView *iconView5;
+@property(nonatomic,strong) TRImageView *iconView1;
+@property(nonatomic,strong) TRImageView *iconView2;
+@property(nonatomic,strong) TRImageView *iconView3;
+@property(nonatomic,strong) TRImageView *iconView4;
+@property(nonatomic,strong) TRImageView *iconView5;
 
-@property (strong, nonatomic) UILabel *titleLb;
-@property (strong, nonatomic) UILabel *descLb;
+@property(nonatomic,strong) UILabel *titleLb;
+@property(nonatomic,strong) UILabel *descLb;
+
+
+
 @end

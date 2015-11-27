@@ -2,7 +2,7 @@
 //  SearchDetailViewController.h
 //  BaseProject
 //
-//  Created by tarena on 15/11/11.
+//  Created by novial on 15/11/11.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
@@ -10,5 +10,16 @@
 
 @interface SearchDetailViewController : UIViewController
 - (id)initWithRequest:(NSURLRequest *)request;
-@property (nonatomic, strong)NSURLRequest *request;
+@property(nonatomic,strong) NSURLRequest *request;
 @end
+
+
+
+
+
+
+
+
+
+
+

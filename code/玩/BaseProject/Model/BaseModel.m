@@ -16,3 +16,9 @@ MJCodingImplementation
     return @{@"typeName": @"typename", @"ID": @"id", @"desc": @"description"};
 }
 @end
+
+
+
+
+
+

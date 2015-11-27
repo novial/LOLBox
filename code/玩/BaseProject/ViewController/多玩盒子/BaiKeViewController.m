@@ -2,34 +2,33 @@
 //  BaiKeViewController.m
 //  BaseProject
 //
-//  Created by tarena on 15/11/11.
+//  Created by novial on 15/11/11.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
 #import "BaiKeViewController.h"
-#import "ToolMenuViewModel.h"
 #import "TRImageView.h"
+#import "ToolMenuViewModel.h"
 #import "TuWanHtmlViewController.h"
-#import "BaiKeGroupViewController.h"
+#import "BestGroupViewController.h"
+#import "ZBCategoryViewController.h"
+#import "SumAbilityViewController.h"
 
-/** 创建自定义cell、图+题目 */
-@interface BaiKeCell : UITableViewCell
-@property (nonatomic, strong) TRImageView *iconView;
-@property (nonatomic, strong) UILabel *nameLb;
+/** 创建自定义cell、图+题目 BaiKeCell*/
+@interface  BaiKeCell: UITableViewCell
+@property(nonatomic,strong) TRImageView *iconView;
+@property(nonatomic,strong) UILabel *nameLb;
 @end
-@implementation BaiKeCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+@implementation BaiKeCell
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.accessoryType = 1;
     }
     return self;
 }
-
-- (UILabel *)nameLb
-{
-    if (_nameLb == nil) {
+- (UILabel *)nameLb {
+    if(_nameLb == nil) {
         _nameLb = [[UILabel alloc] init];
         [self.contentView addSubview:_nameLb];
         [_nameLb mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -41,9 +40,8 @@
     return _nameLb;
 }
 
-- (TRImageView *)iconView
-{
-    if (_iconView == nil) {
+- (TRImageView *)iconView {
+    if(_iconView == nil) {
         _iconView = [[TRImageView alloc] init];
         [self.contentView addSubview:_iconView];
         [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -54,28 +52,28 @@
     }
     return _iconView;
 }
-
 @end
 
-@interface BaiKeViewController() <UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic, strong) ToolMenuViewModel *tmVM;
-@property (nonatomic, strong) UITableView *tableView;
-@end
 
+/** 引入tableView的协议 */
+@interface BaiKeViewController ()<UITableViewDelegate, UITableViewDataSource>
+/** viewmodel */
+@property(nonatomic,strong) ToolMenuViewModel *toolVM;
+/** table */
+@property(nonatomic,strong) UITableView *tableView;
+@end
 @implementation BaiKeViewController
-/** 实现viewModel懒加载 */
-- (ToolMenuViewModel *)tmVM
-{
-    if(!_tmVM){
-        _tmVM = [ToolMenuViewModel new];
+/** 实现viewmodel懒加载 */
+- (ToolMenuViewModel *)toolVM {
+    if(_toolVM == nil) {
+        _toolVM = [[ToolMenuViewModel alloc] init];
     }
-    return _tmVM;
+    return _toolVM;
 }
-
-/** 实现tableView：设置代理，去掉多余cell，头部刷新，注册cell */
-- (UITableView *)tableView
-{
-    if (!_tableView) {
+/** 实现tableView懒加载：设置代理、去掉多余cell、头部刷新、
+ 注册cell*/
+- (UITableView *)tableView {
+    if(_tableView == nil) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -87,65 +85,92 @@
             make.edges.mas_equalTo(0);
         }];
         _tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            [self.tmVM getDataFromNetCompleteHandle:^(NSError *error) {
-                if (error) {
-                    [self showErrorMsg:error.localizedDescription];
-                }else{
-                    [_tableView reloadData];
-                }
-                [_tableView.header endRefreshing];
-            }];
+           [self.toolVM getDataFromNetCompleteHandle:^(NSError *error) {
+               if (error) {
+                   [self showErrorMsg:error.localizedDescription];
+               }else{
+                   [_tableView reloadData];
+               }
+               [_tableView.header endRefreshing];
+           }];
         }];
     }
     return _tableView;
 }
 
-/** 实现tableView协议， */
+/** 实现tableView的协议、去分割线、去选择效果 */
+#pragma mark - UITableView
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.toolVM.rowNumber;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    BaiKeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    [cell.iconView.imageView setImageWithURL:[self.toolVM iconURLForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_1"]];
+    cell.nameLb.text = [self.toolVM titleForRow:indexPath.row];
+    return cell;
+}
+kRemoveCellSeparator
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ([self.toolVM itemTypeForRow:indexPath.row] == ToolMenuItemTypeWeb) {
+        TuWanHtmlViewController *vc=[[TuWanHtmlViewController alloc] initWithURL:[self.toolVM webURLForRow:indexPath.row]];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        if ([[self.toolVM tagForRow:indexPath.row] isEqualToString:@"best_group"]) {
+            BestGroupViewController *vc = [BestGroupViewController new];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        if ([[self.toolVM tagForRow:indexPath.row] isEqualToString:@"item"]) {
+            ZBCategoryViewController *vc = [ZBCategoryViewController new];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        if ([[self.toolVM tagForRow:indexPath.row] isEqualToString:@"sum_ability"]) {
+            SumAbilityViewController *vc = [SumAbilityViewController new];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        
+    }
+}
 
-- (instancetype)init
-{
-    if (self = [super init]) {
-        self.title = @"游戏百科";
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (id)init{
+    if (self=[super init]) {
+        self.title=@"游戏百科";
+        self.tabBarItem.image = [UIImage imageNamed:@"find_culture"];
     }
     return self;
 }
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
     [Factory addMenuItemToVC:self];
     [self.tableView.header beginRefreshing];
 }
 
 
-#pragma mark - UITableView
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.tmVM.rowNumber;
-}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    BaiKeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    [cell.iconView.imageView setImageWithURL:[self.tmVM iconURLForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_1"]];
-    cell.nameLb.text = [self.tmVM titleForRow:indexPath.row];
-    return cell;
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
-kRemoveCellSeparator
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if ([self.tmVM itemTypeForRow:indexPath.row] == ToolMenuItemTypeWeb) {
-        TuWanHtmlViewController *vc = [[TuWanHtmlViewController alloc] initWithURL:[self.tmVM webURLForRow:indexPath.row]];
-        vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
-    }else{
-        if ([[self.tmVM tagForRow:indexPath.row] isEqualToString:@"best_group"]) {
-            BaiKeGroupViewController *vc = [BaiKeGroupViewController new];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-    }
-}
+*/
+
+
+
+
+
+
 
 @end

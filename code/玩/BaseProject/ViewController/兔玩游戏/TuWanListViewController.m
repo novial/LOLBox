@@ -192,9 +192,10 @@ kRemoveCellSeparator
     }
     
     if ([self.tuwanVM isPicInListForRow:indexPath.row]) {
-        TuWanPicViewController *vc = [[TuWanPicViewController alloc] initWithAid:[self.tuwanVM aidInListForRow:indexPath.row]];
+        TuWanPicViewController *vc =[[TuWanPicViewController alloc] initWithAid:[self.tuwanVM aidInListForRow:indexPath.row]];
         [self.navigationController pushViewController:vc animated:YES];
     }
+    
 }
 
 /** 滚动栏中被选中后触发 */
@@ -204,7 +205,10 @@ kRemoveCellSeparator
         [self.navigationController pushViewController:vc animated:YES];
     }
     if ([self.tuwanVM isPicInIndexPicForRow:index]) {
-        TuWanPicViewController *vc = [[TuWanPicViewController alloc] initWithAid:[self.tuwanVM aidInIndexPicForRow:index]];
+        TuWanPicViewController *vc=[[TuWanPicViewController alloc] initWithAid:[self.tuwanVM aidInIndexPicForRow:index]];
+//  获取成员变量, 外部不可以获取保护 和 私有类型
+//  如果是继承， 继承公开和保护的， 私有的不可以
+        vc->public1= @",,,,";
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

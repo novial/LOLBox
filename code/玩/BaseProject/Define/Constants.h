@@ -10,7 +10,7 @@
 #define Constants_h
 
 /** 导航栏题目文字大小 */
-#define kNaviTitleFontSize   24.0
+#define kNaviTitleFontSize   20.0
 /** 导航栏题目文字颜色 */
 #define kNaviTitleColor     [UIColor colorWithRed:239/255.0 green:141/255.0 blue:119/255.0 alpha:1.0]
 

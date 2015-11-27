@@ -2,7 +2,7 @@
 //  TuWanPicViewModel.h
 //  BaseProject
 //
-//  Created by tarena on 15/11/9.
+//  Created by jiyingxin on 15/11/9.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
@@ -12,13 +12,26 @@
 @interface TuWanPicViewModel : BaseViewModel
 
 /** 必须使用下方初始化方法 */
-- (id _Nonnull)initWithAid:(NSString * _Nonnull)aid;
-/** aid的赋值应该是非空，使用xCode7新加入的非空标识 */
-@property (nonatomic, strong)  NSString * _Nonnull aid;
+- (id)initWithAid:(NSString *)aid;
+/** aid的赋值应该是非空,使用xcode7新加入的非空标识 */
+@property(nonatomic,strong) NSString * aid;
 
-
-@property (nonatomic, assign) NSInteger rowNumber;
-- (NSURL * _Nonnull)picURLForRow:(NSInteger)row;
-@property (nonatomic, strong) TuWanPicModel * _Nonnull picModel;
+@property(nonatomic) NSInteger rowNumber;
+- (NSURL *)picURLForRow:(NSInteger)row;
+@property(nonatomic,strong) TuWanPicModel *picModel;
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+

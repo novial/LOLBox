@@ -2,7 +2,7 @@
 //  BestGroupCell.m
 //  BaseProject
 //
-//  Created by tarena on 15/11/11.
+//  Created by jiyingxin on 15/11/11.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
@@ -12,9 +12,8 @@
 
 @implementation BestGroupCell
 
-- (TRImageView *)iconView1
-{
-    if (!_iconView1) {
+- (TRImageView *)iconView1 {
+    if(_iconView1 == nil) {
         _iconView1 = [[TRImageView alloc] init];
         [self.contentView addSubview:_iconView1];
         [_iconView1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -26,9 +25,8 @@
     return _iconView1;
 }
 
-- (TRImageView *)iconView2
-{
-    if (!_iconView2) {
+- (TRImageView *)iconView2 {
+    if(_iconView2 == nil) {
         _iconView2 = [[TRImageView alloc] init];
         [self.contentView addSubview:_iconView2];
         [_iconView2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -40,9 +38,8 @@
     return _iconView2;
 }
 
-- (TRImageView *)iconView3
-{
-    if (!_iconView3) {
+- (TRImageView *)iconView3 {
+    if(_iconView3 == nil) {
         _iconView3 = [[TRImageView alloc] init];
         [self.contentView addSubview:_iconView3];
         [_iconView3 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -54,9 +51,8 @@
     return _iconView3;
 }
 
-- (TRImageView *)iconView4
-{
-    if (!_iconView4) {
+- (TRImageView *)iconView4 {
+    if(_iconView4 == nil) {
         _iconView4 = [[TRImageView alloc] init];
         [self.contentView addSubview:_iconView4];
         [_iconView4 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -68,9 +64,8 @@
     return _iconView4;
 }
 
-- (TRImageView *)iconView5
-{
-    if (!_iconView5) {
+- (TRImageView *)iconView5 {
+    if(_iconView5 == nil) {
         _iconView5 = [[TRImageView alloc] init];
         [self.contentView addSubview:_iconView5];
         [_iconView5 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -82,26 +77,24 @@
     return _iconView5;
 }
 
-- (UILabel *)titleLb
-{
-    if (!_titleLb) {
+- (UILabel *)titleLb {
+    if(_titleLb == nil) {
         _titleLb = [[UILabel alloc] init];
         [self.contentView addSubview:_titleLb];
         [_titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(-10);
             make.left.top.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
         }];
     }
     return _titleLb;
 }
 
-- (UILabel *)descLb
-{
-    if (!_descLb) {
+- (UILabel *)descLb {
+    if(_descLb == nil) {
         _descLb = [[UILabel alloc] init];
-        _descLb.textColor = [UIColor lightGrayColor];
+        _descLb.textColor=[UIColor lightGrayColor];
         _descLb.numberOfLines = 2;
-        _descLb.font = [UIFont systemFontOfSize:14];
+        _descLb.font=[UIFont systemFontOfSize:14];
         [self.contentView addSubview:_descLb];
         [_descLb mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.iconView1.mas_bottom).mas_equalTo(10);
@@ -112,15 +105,23 @@
     return _descLb;
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
-    {
-        UIView *yellowView = [UIView new];
-        yellowView.backgroundColor = kRGBColor(254, 249, 236);
-        self.selectedBackgroundView = yellowView;
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        UIView *yelloView=[UIView new];
+        yelloView.backgroundColor=kRGBColor(254, 249, 236);
+        self.selectedBackgroundView=yelloView;
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
 }
 
 @end

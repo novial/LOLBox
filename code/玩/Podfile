@@ -26,7 +26,6 @@ pod 'SWTableViewCell'
 pod 'MWPhotoBrowser'
 pod 'WMPageController'
 
-
 end
 
 
